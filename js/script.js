@@ -1,4 +1,4 @@
-$(window).ready(function () {
+$('body').ready(function () {
   //Random Function (so I dont have to typle a Math.random every time)
   var rand = function (r){return Math.floor(Math.random()*r);}
   var colorPalettes = ["#FFB3BA","#FFDFBA","#FFFFBA","#BAFFC9","#BAE1FF","#9FB9BF"];
