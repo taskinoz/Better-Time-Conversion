@@ -4,89 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <title>Better Time Conversion</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" defer></script>
+    <script src="js/script.js" charset="utf-8" defer></script>
   </head>
-  <style>
-    *{
-      font-family: Roboto, Arial;
-    }
-    .container{
-      margin: 20% 0;
-    }
-    .input,#output{
-      margin: 40px 0;
-      text-align: center;
-      font-size: 34px;
-      line-height: 44px;
-    }
-    .input input{
-      width: 335px;
-      font-size: 34px;
-      line-height: 44px;
-      background: transparent;
-      border: none;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-      padding: 5px 0;
-      border-radius: 0;
-    }
-    input[type=number]::-webkit-inner-spin-button,
-    input[type=number]::-webkit-outer-spin-button {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        margin: 0;
-    }
-    input:focus {
-        outline-width: 0;
-    }
-    ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-      color: #444;
-      text-transform: capitalize;
-    }
-    ::-moz-placeholder { /* Firefox 19+ */
-      color: #444;
-      text-transform: capitalize;
-    }
-    :-ms-input-placeholder { /* IE 10+ */
-      color: #444;
-      text-transform: capitalize;
-    }
-    :-moz-placeholder { /* Firefox 18- */
-      color: #444;
-      text-transform: capitalize;
-    }
-      </style>
   <body>
     <div class="container">
       <div class="input"><input type="number" id="input" placeholder="seconds" /></div>
       <div id="output"></div>
     </div>
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.4.3.min.js" ></script>
-    <script type="text/javascript">
-    //Random Function (so I dont have to typle a Math.random every time)
-    var rand = function (r){return Math.floor(Math.random()*r);}
-    var colorPalettes = ["#FFB3BA","#FFDFBA","#FFFFBA","#BAFFC9","#BAE1FF","#9FB9BF"]
-    $("body").css("background",colorPalettes[rand(colorPalettes.length)]);
-    $(document).ready(function(){
-      $('#input').val(window.location.hash.substr(1));
-        $("#input").keyup(function(){
-            input = $(this).val();
-            //var seconds = 160;
-            var secs = input%60;
-            var mins = Math.floor(input/60%60);
-            var hours = Math.floor(input/60/60%24);
-            var days = Math.floor(input/60/60/24%7)
-            var weeks = Math.floor(input/60/60/24/7)
-            var output = ((weeks > 0) ? weeks+((weeks>1)?" weeks ":" week "):"")+
-                         ((days > 0) ? days+((days>1)?" days ":" day "):"")+
-                         ((hours > 0) ? hours+((hours>1)?" hours ":" hour "):"")+
-                         ((mins > 0) ? mins+((mins>1)?" minutes ":" minute "):"")+
-                         ((secs > 0) ? secs+((secs>1)?" seconds ":" second "):"");
-
-            $("#output").text(output);
-        });
-        $('#input').keyup();
-    })
-  </script>
   </body>
 </html>
