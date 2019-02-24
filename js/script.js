@@ -1,4 +1,4 @@
-$('body').ready(function () {
+$(window).on('load', function () {
   //Random Function (so I dont have to typle a Math.random every time)
   var rand = function (r){return Math.floor(Math.random()*r);}
   var colorPalettes = ["#FFB3BA","#FFDFBA","#FFFFBA","#BAFFC9","#BAE1FF","#9FB9BF"];
@@ -30,7 +30,7 @@ if (hashTime) {
   $("#output").text(output);
 }
 
-$('#input').on('keydown',function () {
+$('#input').on('change paste keyup keydown', function () {
   convert($(this).val());
   $("#output").text(output);
 });
